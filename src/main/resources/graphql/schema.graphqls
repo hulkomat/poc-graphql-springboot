@@ -1,24 +1,41 @@
+"""A person who wrote one or more books."""
 type Author {
+  """The unique identifier of the author."""
   id: ID!
+  """The name of the author."""
   name: String!
+  """A list of books written by the author."""
   books: [Book!]!
 }
 
+"""A book written by an author."""
 type Book {
+  """The unique identifier of the book."""
   id: ID!
+  """The title of the book."""
   title: String!
+  """The number of pages in the book."""
   pages: Int
+  """The author of the book."""
   author: Author!
 }
 
+"""A library that contains books."""
 type Library {
+  """The unique identifier of the library."""
   id: ID!
+  """The name of the library."""
   name: String!
+  """A list of books in the library."""
   books: [Book!]!
 }
 
+"""All queries available in the API."""
 type Query {
+  """Fetch all authors."""
   authors: [Author!]!
+  """Fetch all books."""
   books: [Book!]!
+  """Fetch all libraries."""
   libraries: [Library!]!
 }
