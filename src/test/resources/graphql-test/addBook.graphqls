@@ -1,0 +1,4 @@
+addBook.graphql
+mutation AddBook($input: BookInput!) {
+  addBook(book: $input) { id title }
+}
